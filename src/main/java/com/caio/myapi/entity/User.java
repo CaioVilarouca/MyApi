@@ -4,12 +4,15 @@ import java.io.Serializable;
 
 import org.hibernate.validator.constraints.Length;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 
-
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -23,7 +26,7 @@ public class User implements Serializable {
 	private String name;
 	
 	@NotEmpty(message = "Campo LOGIN é obrigatório")
-	@Length(min = 6, max = 30, message = "O nome deve ter entre 6 e 12 caracteres")
+	@Length(min = 5, max = 30, message = "O nome deve ter entre 6 e 12 caracteres")
 	private String login;
 	
 	@NotEmpty(message = "Campo SENHA é obrigatório")
