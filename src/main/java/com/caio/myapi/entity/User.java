@@ -33,7 +33,6 @@ public class User implements Serializable {
 	
 	public User() {}
 
-
 	public User(Integer id, String name, String login, String password) {
 		super();
 		this.id = id;
