@@ -1,4 +1,4 @@
-package com.caio.myapi.resources;
+package com.caio.myapi.resource;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

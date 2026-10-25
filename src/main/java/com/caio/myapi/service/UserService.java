@@ -2,6 +2,7 @@ package com.caio.myapi.service;
 
 import java.util.Optional;
 
+import com.caio.myapi.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.caio.myapi.entity.User;
@@ -16,9 +17,8 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 	
-	
+	// <Optional> Pode ou não retorna alguma coisa
 	public User findById(Integer id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.orElse(null);
-    }
+		return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("Usuário não encontrado com o ID: " + id));
+	}
 }
