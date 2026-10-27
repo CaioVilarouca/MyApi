@@ -9,5 +9,4 @@ public final class ErrorTypes {
     public static final String INTERNAL_ERROR = BASE_URL + "/internal-error";
 
     public static final String NOT_FOUND = BASE_URL + "/not-found";
-
 }

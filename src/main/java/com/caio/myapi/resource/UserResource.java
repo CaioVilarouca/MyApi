@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.caio.myapi.entity.User;
 import com.caio.myapi.service.UserService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/user")
 public class UserResource {
@@ -24,5 +26,11 @@ public class UserResource {
 		
 		User user = this.userService.findById(id);
 		return ResponseEntity.ok().body(user);
+	}
+
+	@GetMapping
+	public ResponseEntity<List<User>> findAll() {
+		List<User> list = userService.findAll();
+		return ResponseEntity.ok().body(list);
 	}
 }
