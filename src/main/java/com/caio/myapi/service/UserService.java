@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.caio.myapi.exception.UserNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.caio.myapi.entity.User;
@@ -38,5 +39,10 @@ public class UserService {
 	public User create(User user) {
 		user.setId(null);
 		return userRepository.save(user);
+	}
+
+	public void delete(Integer id) {
+		findById(id);
+		userRepository.deleteById(id);
 	}
 }
