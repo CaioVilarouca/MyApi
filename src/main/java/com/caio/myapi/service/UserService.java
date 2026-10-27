@@ -34,4 +34,9 @@ public class UserService {
 		newUser.setPassword(user.getPassword());
 		return userRepository.save(newUser);
 	}
+
+	public User create(User user) {
+		user.setId(null);
+		return userRepository.save(user);
+	}
 }
